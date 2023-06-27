@@ -6,7 +6,7 @@ class App extends Component {
     super();
     this.state = {
       monsters: [],
-      search : ''
+      search: "",
     };
   }
   componentDidMount() {
@@ -29,20 +29,22 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <input type="search" placeholder="search" onChange={(event) => {
-          const search = event.target.value.toLocaleLowerCase();
-          
-          this.setState(()=>{
-            return {search}
-          })
-        }} />
+      <h1>List of monster</h1>
+        <input
+          type="search"
+          placeholder="search"
+          onChange={(event) => {
+            const search = event.target.value.toLocaleLowerCase();
+
+            this.setState(() => {
+              return { search };
+            });
+          }}
+        />
         {filterMonster.map((monster) => {
           return (
             <div key={monster.id}>
-              <h1>
-                hi my name is {monster.name}and my profession is{" "}
-                {monster.company.bs}{" "}
-              </h1>
+              <h4>{monster.name}</h4>
             </div>
           );
         })}

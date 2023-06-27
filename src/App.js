@@ -24,7 +24,6 @@ class App extends Component {
           return (
             <div key={monster.id}>
               <h1>
-                {" "}
                 hi my name is {monster.name}and my profession is {monster.company.bs}{" "}
               </h1>
             </div>
